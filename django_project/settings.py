@@ -45,8 +45,10 @@ INSTALLED_APPS = [
     "reviews",
     "orders",
     "rest_framework",
+    'rest_framework.authtoken',
 ]
 
+AUTH_USER_MODEL = "users.User"
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,

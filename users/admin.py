@@ -1,10 +1,30 @@
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
 from .models import User
 
 # Register your models here.
 
+
 @admin.register(User)
-class UserAdmin(admin.ModelAdmin):
-  list_display = ["username", "first_name", "last_name", "email", "password"]
-  list_filter = ["username", "first_name"]
+class CustomUserAdmin(UserAdmin):
+    model = User
+    list_display = ("username", "first_name", "last_name",
+                    "email", "avatar", "is_staff", "is_active",)
+    list_filter = ("is_staff", "is_active",)
+    fieldsets = (
+        (None, {"fields": ("email", "password", "username")}),
+        ("Permissions", {"fields": ("is_staff",
+         "is_active", "groups", "user_permissions")}),
+    )
+    add_fieldsets = (
+        (None, {
+            "classes": ("wide",),
+            "fields": (
+                "email", "password1", "password2", "is_staff",
+                "is_active", "groups", "user_permissions"
+            )}
+         ),
+    )
+search_fields = ("email",)
+ordering = ("email",)
 
