@@ -61,13 +61,12 @@ class User(AbstractBaseUser, PermissionsMixin):
       return super().save(*args, **kwargs)
 
   
-
+  
   class Meta:
     verbose_name = "Пользователь"
     verbose_name_plural = "Пользователи"
 
-
-  def __str__(self):
-    return f"{self.username}"
+  def __str__(self) -> str:
+       return f"{self.username}"
 
 

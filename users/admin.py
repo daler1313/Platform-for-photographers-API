@@ -12,7 +12,7 @@ class CustomUserAdmin(UserAdmin):
                     "email", "avatar", "is_staff", "is_active",)
     list_filter = ("is_staff", "is_active",)
     fieldsets = (
-        (None, {"fields": ("email", "password", "username")}),
+        ("Base", {"fields": ("email", "password", "username")}),
         ("Permissions", {"fields": ("is_staff",
          "is_active", "groups", "user_permissions")}),
     )
@@ -20,7 +20,7 @@ class CustomUserAdmin(UserAdmin):
         (None, {
             "classes": ("wide",),
             "fields": (
-                "email", "password1", "password2", "is_staff",
+                "email", "username", "password1", "password2", "is_staff",
                 "is_active", "groups", "user_permissions"
             )}
          ),
