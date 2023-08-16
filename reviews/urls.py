@@ -1,10 +1,10 @@
-from django.urls import path,include
+from django.urls import path, include
 from rest_framework import routers
-from .views import FrameViewSet
+from .views import ReviewViewSet
 
 
 router = routers.DefaultRouter()
-router.register("frames", FrameViewSet)
+router.register("review", ReviewViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),

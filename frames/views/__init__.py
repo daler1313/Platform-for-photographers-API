@@ -1,1 +1,1 @@
-from .frame import FrameList,FrameDetail
+from .frame import FrameViewSet

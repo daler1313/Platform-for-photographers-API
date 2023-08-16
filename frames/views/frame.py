@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework import generics
+from rest_framework import viewsets
 
 
 from ..models import Frame
@@ -7,10 +7,6 @@ from ..serializer import FrameSerializer
 
 
 # Create your views here.
-class FrameList(generics.ListCreateAPIView):
-  queryset = Frame.objects.all()
-  serializer_class = FrameSerializer
-
-class FrameDetail(generics.RetrieveUpdateDestroyAPIView):
+class FrameViewSet(viewsets.ModelViewSet):
   queryset = Frame.objects.all()
   serializer_class = FrameSerializer
