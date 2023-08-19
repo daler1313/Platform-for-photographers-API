@@ -47,7 +47,19 @@ INSTALLED_APPS = [
     'drf_spectacular',
     "rest_framework",
     'rest_framework.authtoken',
+    "debug_toolbar",
+    
 ]
+
+INTERNAL_IPS = [
+    # ...
+    "127.0.0.1",
+    'localhost'
+    # ...
+]
+
+
+
 
 AUTH_USER_MODEL = "users.User"
 
@@ -65,7 +77,7 @@ REST_FRAMEWORK = {
 
 
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'Your Project API',
+    'TITLE': 'Platform for photographers API',
     'DESCRIPTION': 'Your project description',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
@@ -74,6 +86,7 @@ SPECTACULAR_SETTINGS = {
 
 
 MIDDLEWARE = [
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

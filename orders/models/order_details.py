@@ -8,7 +8,7 @@ class OrderDetail(models.Model):
   quantity = models.IntegerField("Количество", default=1)
 
   @property
-  def total_price(self):
+  def total_price(self)->float:
       return (self.photo.price + self.frame.price) * self.quantity
   
   class Meta:
