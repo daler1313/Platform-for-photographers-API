@@ -5,6 +5,6 @@ from .models import Review
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
-  list_display = ("photo", "user", "rating", "comment", "created_at")
+  list_display = ("id","photo", "user", "rating", "comment", "created_at")
   search_fields = ("rating", "user")
   date_hierarchy = 'created_at'

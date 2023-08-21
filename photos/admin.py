@@ -13,6 +13,6 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Photo)
 class PhotoAdmin(admin.ModelAdmin):
-  list_display = ("photographer", "title", "description","image", "price", "created_at")
+  list_display = ("id","photographer", "title", "description","image", "price", "created_at")
   date_hierarchy = 'created_at'
 

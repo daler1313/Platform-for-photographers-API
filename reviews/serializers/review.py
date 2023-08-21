@@ -10,3 +10,16 @@ class ReviewSerializer(serializers.ModelSerializer):
   class Meta:
     model = Review
     fields = ('id', "photo", "user", "rating", "comment", "created_at")
+
+
+class ReviewCreateSerializer(serializers.ModelSerializer):
+  class Meta:
+    model = Review
+    fields = ("photo", "user", "rating", "comment", "created_at")
+
+
+class ReviewEditSerializer(serializers.ModelSerializer):
+  class Meta:
+    model = Review
+    fields = ("photo", "user", "rating", "comment", "created_at")
+  
