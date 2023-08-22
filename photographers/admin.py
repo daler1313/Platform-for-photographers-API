@@ -5,4 +5,4 @@ from .models import Photographer
 
 @admin.register(Photographer)
 class PhotographerAdmin(admin.ModelAdmin):
-  list_display = ["users", "bio"]
+  list_display = ["pk","users", "bio"]

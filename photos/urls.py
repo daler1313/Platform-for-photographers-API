@@ -4,8 +4,8 @@ from .views import PhotoViewSet,CategoryViewSet
 
 
 router = routers.DefaultRouter()
-router.register("category", CategoryViewSet)
-router.register("photo", PhotoViewSet)
+router.register("categories", CategoryViewSet)
+router.register("photos", PhotoViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),
