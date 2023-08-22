@@ -1,6 +1,6 @@
 from django.db import models
+from django.conf import settings
 
-# Create your models here.
 
 class Order(models.Model):
   class Status(models.TextChoices):
@@ -10,7 +10,7 @@ class Order(models.Model):
     CANCELED = "CANCELED", "Отменен"
 
   status = models.CharField("статус заказа", choices=Status.choices, default=Status.PENDING, max_length=25)
-  user = models.ForeignKey("users.user", on_delete=models.CASCADE, related_name="orders")
+  user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="orders")
   created_at = models.DateTimeField("дата и время заказа")
 
   class Meta:
