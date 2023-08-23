@@ -10,6 +10,7 @@ class Photo(models.Model):
   category = models.ManyToManyField("photos.category", related_name="photos")
   created_at = models.DateField("создан в")
   price = models.FloatField("цена")
+  
 
   class Meta:
     verbose_name = "Фото"

@@ -10,6 +10,7 @@ class PhotoSerializer(serializers.ModelSerializer):
     fields = ('id', "photographer", "title", "description","image", "category", "created_at", "price")
 
 
+
 class PhotoCreateSerializer(serializers.ModelSerializer):
   class Meta:
     model = Photo
@@ -20,3 +21,6 @@ class PhotoEditSerializer(serializers.ModelSerializer):
   class Meta:
     model = Photo
     fields = ("photographer", "title", "description","image", "category", "created_at", "price")
+
+
+
