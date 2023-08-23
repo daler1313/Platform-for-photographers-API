@@ -11,3 +11,15 @@ class OrderDetailSerializer(serializers.ModelSerializer):
   class Meta:
     model = OrderDetail
     fields = ('id', "order", "photo", "frame", "quantity", "total_price")
+
+
+class OrderDetailCreateSerializer(serializers.ModelSerializer):
+  class Meta:
+    model = OrderDetail
+    fields = ("order", "photo", "frame", "quantity", "total_price")
+
+
+class OrderDetailEditSerializer(serializers.ModelSerializer):
+  class Meta:
+    model = OrderDetail
+    fields = ("order", "photo", "frame", "quantity", "total_price")

@@ -2,7 +2,6 @@ from rest_framework import viewsets, status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
-from django.db.models.aggregates import Avg
 from rest_framework import filters
 from ..models import Photo
 from ..serializers import PhotoSerializer,PhotoEditSerializer,PhotoCreateSerializer
