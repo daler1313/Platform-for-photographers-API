@@ -7,7 +7,7 @@ from .models import Photo
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-  list_display = ("title", "description")
+  list_display = ("pk","title", "description")
   search_fields = ("title",)
 
 

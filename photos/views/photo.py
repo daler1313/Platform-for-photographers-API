@@ -1,6 +1,8 @@
 from rest_framework import viewsets, status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters
 from ..models import Photo
 from ..serializers import PhotoSerializer,PhotoEditSerializer,PhotoCreateSerializer
 
@@ -8,6 +10,10 @@ from ..serializers import PhotoSerializer,PhotoEditSerializer,PhotoCreateSeriali
 
 class PhotoViewSet(viewsets.ModelViewSet):
   queryset = Photo.objects.all()
+  filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
+  filterset_fields = ['category', 'photographer']
+  search_fields = ['title', 'description','photographer__first_name', 'photographer__last_name']
+  ordering_fields = ['title','price']
   permission_classes = [IsAuthenticated]
 
   def get_serializer_class(self):
