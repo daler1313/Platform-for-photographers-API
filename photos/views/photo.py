@@ -13,8 +13,7 @@ class PhotoViewSet(viewsets.ModelViewSet):
   filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
   filterset_fields = ['photographer', 'category']
   search_fields = ['title', 'description','photographer.users__first_name', 'photographer.users__last_name']
-  #проблема 
-  # ordering_fields = ['title','price']
+  ordering_fields = ['title','price']
   permission_classes = [IsAuthenticated]
 
   def get_serializer_class(self):
